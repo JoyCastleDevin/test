@@ -6,13 +6,14 @@ on:
         description: 'feature branch'
         required: true
         default: 'feature-'
-    branch: [${{ github.event.inputs.job}}]
 jobs:
   feature-deploy:
     runs-on: go-os
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        run: echo ${{ github.event.inputs.job}}
+        with: github.event.inputs.job
       - name: Pull Config
         run: /bin/bash ./script/pull_config.sh dev
       - name: Build
