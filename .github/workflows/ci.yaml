@@ -12,7 +12,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        run: echo ${{ github.event.inputs.job}}
         with: github.event.inputs.job
       - name: Pull Config
         run: /bin/bash ./script/pull_config.sh dev
