@@ -1,13 +1,13 @@
 name: local-test
 on:
-  push:
-    branches: [ feature-test ]
-#  workflow_dispatch:
-#     inputs:
-#       job:
-#         description: 'feature branch'
-#         required: true
-#         default: 'feature-'
+  # push:
+  #   branches: [ feature-test ]
+ workflow_dispatch:
+    inputs:
+      job:
+        description: 'feature branch'
+        required: true
+        default: 'feature-'
 jobs:
   feature-deploy:
     runs-on: go-os
