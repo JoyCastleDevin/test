@@ -8,7 +8,7 @@ jobs:
     runs-on: go-os
     steps:
       - name: Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Pull Config
         run: /bin/bash ./script/pull_config.sh dev
       - name: Build
