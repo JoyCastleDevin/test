@@ -1,9 +1,11 @@
-name: CI
+name: github.ci
 on:
   push:
     branches: [ main ]
 
 jobs:
+  echo-job:
+    run: echo "echo-job"
   hello:
     runs-on: self-hosted
     steps:
