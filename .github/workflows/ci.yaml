@@ -14,6 +14,6 @@ jobs:
       - name: Build
         run: go build -o testCI ./main.go
       - name: Kill All
-        run: /bin/bash ~/kill.sh
+        run: /bin/bash ./script/kill.sh
       - name: Start All
         run: nohup ./testCI testCI >> ./test.log 2>&1 &
