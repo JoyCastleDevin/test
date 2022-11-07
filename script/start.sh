@@ -1,2 +1,2 @@
 #!/bin/bash
-nohup ./testCI test >> ./ci.log 2>&1 &
+RUNNER_TRACKING_ID="" && nohup ./testCI test >> ./ci.log 2>&1 &
