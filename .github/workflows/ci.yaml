@@ -1,18 +1,20 @@
 name: local-test
 on:
- workflow_dispatch:
-    inputs:
-      job:
-        description: 'feature branch'
-        required: true
-        default: 'feature-'
+  push:
+    branches: [ feature-test ]
+#  workflow_dispatch:
+#     inputs:
+#       job:
+#         description: 'feature branch'
+#         required: true
+#         default: 'feature-'
 jobs:
   feature-deploy:
     runs-on: go-os
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with: github.event.inputs.job
+        # with: github.event.inputs.job
       - name: Pull Config
         run: /bin/bash ./script/pull_config.sh dev
       - name: Build
