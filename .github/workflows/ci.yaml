@@ -4,10 +4,8 @@ on:
     branches: [ main ]
 
 jobs:
-  echo-job:
-    run: echo "echo-job"
   hello:
-    runs-on: self-hosted
+    runs-on: go-os
     steps:
       - uses: actions/checkout@v2
 
