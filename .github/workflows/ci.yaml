@@ -19,4 +19,3 @@ jobs:
         run: /bin/bash ./script/start.sh
       - name: Lookup
         run: ps -ef | grep testCI | grep -v grep
-      - run: echo "job start ok"
