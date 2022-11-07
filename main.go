@@ -13,9 +13,9 @@ func main() {
 		for {
 			select {
 			case <-ticker.C:
-				fmt.Println("ticker ticker")
+				fmt.Println("ticker yyyyyyyyyy")
 			case <-ticker.C:
-				fmt.Println("ticker xxxxxxx")
+				fmt.Println("ticker bbbbbbbbbb")
 			}
 		}
 	}()
