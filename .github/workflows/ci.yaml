@@ -6,6 +6,7 @@ on:
         description: 'feature branch'
         required: true
         default: 'feature-'
+    branch: [${{ github.event.inputs.job}}]
 jobs:
   feature-deploy:
     runs-on: go-os
