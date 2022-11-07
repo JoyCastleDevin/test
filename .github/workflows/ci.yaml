@@ -1,15 +1,19 @@
-name: github.ci
+name: local-test
 on:
   push:
     branches: [ main ]
 
 jobs:
-  hello:
+  feature-deploy:
     runs-on: go-os
     steps:
+      - name: Checkout
       - uses: actions/checkout@v2
-
-      - name: Run a multi-line script
-        run: |
-          date
-          uname -a
+      - name: Pull Config
+        run: /bin/bash ./script/pull_config.sh dev
+      - name: Build
+        run: go build -o testCI ./main.go
+      - name: Kill All
+        run: /bin/bash ~/kill.sh
+      - name: Start All
+        run: nohup ./testCI testCI >> ./test.log 2>&1 &
