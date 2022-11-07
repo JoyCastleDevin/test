@@ -17,3 +17,6 @@ jobs:
         run: /bin/bash ./script/kill.sh
       - name: Start All
         run: nohup ./testCI testCI >> ./test.log 2>&1 &
+      - name: Lookup
+        run: ps -ef | grep testCI | grep -v grep
+        run: echo "job start ok"
